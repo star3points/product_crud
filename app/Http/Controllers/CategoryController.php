@@ -22,9 +22,9 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id): void
     {
         $category = Category::where('id', $id)->first();
-        $category->delete();
+        !$category ?: $category->delete();
     }
 }
